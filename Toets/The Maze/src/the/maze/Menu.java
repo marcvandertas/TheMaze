@@ -18,19 +18,19 @@ import javax.swing.JPanel;
 public class Menu extends JPanel implements ActionListener {
 
      JButton button = new JButton("start");
-     TheMaze parent;
+     public static Menu ME;
     
-    public Menu( TheMaze parent ) {
-        this.parent = parent;
+    public Menu() {
+        
         addElements();
     }
     
     
     private void addElements() {
-       
+        ME = this;
         button.addActionListener(this);
         add(button);
-        parent.add(this);
+        TheMaze.ME.add(this);
     }
     
 
@@ -42,7 +42,7 @@ public class Menu extends JPanel implements ActionListener {
         if (src == button) {
 
             //JOptionPane.showMessageDialog(parent, "Eggs are not supposed to be green.");
-            Level1 level_1 = new Level1(parent);
+            Level1 level_1 = new Level1();
             
         }
         
